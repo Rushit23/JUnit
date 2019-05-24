@@ -1,0 +1,121 @@
+
+
+@Before
+
+- Method Gets Call Before Every Tests
+- Good  Way To Impliment And Initialise Algorithm
+- Removes the Code Redundancy
+- Used For Setting Browser Instance Setting test Data
+
+
+
+	@Before
+	public void initialiseBrowser()
+	{
+		 System.setProperty("webdriver.chrome.driver","D:/Selenium-Drivers/ChromeDriver/chromedriver.exe");		
+	}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+- Create A Static Variable 
+
+	static BankOperation customer ;
+	
+	@Before
+	public void initialiseCustomer()
+	{
+		 customer = new BankOperation () ;		
+	}
+	
+	
+	@Test
+	public void initialBalanceIsZeroTest()
+	{
+	
+		assertEquals("Initial Balance is Not Zero",0,customer.getbalance());
+		
+		
+	}
+	
+	@Test
+	public void DepositTest()
+	{
+	
+	customer.deposit(1000);
+	assertEquals("Account balance is not correct ",1000,customer.getbalance());
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+@BeforeClass
+
+- Method Gets Called Before any tests gets Exceuted  and will  be called Once For Class
+
+- Method Needs To Be static
+
+- Good Way To Implement and initialise algorithm
+
+- We Can Set PreCOndition For Tests , Setting Browser Instance, Setting Test Data
+
+
+- Assume.assumeTrue(false);
+
+	Is HelpFul In Controlling The Execution 
+
+
+	// Method must be static
+
+	@BeforeClass
+	public static void TestDataSetUp()
+	{
+		System.out.println("Called Once  Before Any Test In The Class");
+		Assume.assumeTrue(false);
+	}
+	 
+	// Method must be static
+
+	@AfterClass
+	public static void TestDataCleanUp()
+	{
+		System.out.println("Called Once  After All Test In The Class"); 
+	}
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+@Test(timeout = 10)
+
+- Goodway To Control The Execution Time
+
+
+
+
+
+

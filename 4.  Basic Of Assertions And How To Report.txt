@@ -1,0 +1,77 @@
+
+/****************  Basic Of Assertions And How To Report ********************/
+
+// Creating A Rule For Error Collection
+
+
+@Rule
+public ErrorCollector error = new ErrorCollector();
+
+
+-------------------------------------------------------------
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ErrorCollector;
+
+public class AssertionsBasics 
+{
+	static BankOperation customer ;
+	
+	
+	
+	@Before
+	public void initialiseCustomer()
+	{
+		 customer = new BankOperation () ;		
+	}
+	
+	
+	@Rule
+	public ErrorCollector error = new ErrorCollector();
+	
+	@Test
+	public void initialBalanceIsZeroTest()
+	{
+		System.out.println(" Test Started ");
+		
+		try
+		{
+		assertEquals("Initial Balance is Not Zero",1,customer.getbalance());
+		}
+		
+		catch (Throwable e)
+		{
+			error.addError(e);
+			
+		}
+		
+		
+		
+		try
+		{
+		assertEquals("Initial Balance is Not Zero",0,customer.getbalance());
+		}
+		
+		catch (Throwable e)
+		{
+			error.addError(e);
+			
+		}
+		
+		System.out.println(" Test Finished ");
+				
+	}
+	
+	
+	
+	
+	
+	
+
+}
+
+

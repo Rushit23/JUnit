@@ -1,0 +1,26 @@
+Junit :
+
+Java Projects :
+
+Bank Program , Bank Program Test 
+
+-------------------------------------------------------------
+
+- Define the Package by Name Test for ex. BankAppTest
+
+- Write word Tets at the End of The Test Method 
+
+- Name Of the Test Method Should be Descriptive
+
+------------------------------------------------------------------------------------------------------------------
+- Associating two Project 
+
+Rc Banking Test Project > BuildPath >Projects >Add ref to Banking Program > Ok
+
+------------------------------------------------------------------------------------------------------------------
+
+Oreder  Of Execution Is First On First Come Basis :
+
+------------------------------------------------------------------------------------------------------------------
+
+Always Recommended to End the test With KeyWord : Test
